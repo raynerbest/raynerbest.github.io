@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090b10">
+  <meta name="description" content="Portfolio of Rayner Bestard, an Unreal Engine Gameplay Developer and Technical Designer specializing in player systems, traversal, combat, AI and production-ready tools.">
+  <meta property="og:title" content="Rayner Bestard | Unreal Engine Gameplay Developer">
+  <meta property="og:description" content="Gameplay systems, technical design and Unreal Engine development.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://raynerbest.github.io/">
+  <title>Rayner Bestard | Unreal Engine Gameplay Developer</title>
+  <style>
+    :root {
+      --bg:#090b10; --surface:#10141c; --surface-2:#151b25; --text:#f1f5f9;
+      --muted:#9ba8ba; --line:rgba(255,255,255,.09); --blue:#4eb7ff;
+      --cyan:#50e3c2; --blue-soft:rgba(78,183,255,.13); --max:1180px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;overflow-x:hidden}
+    body:before{content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(circle at 78% 8%,rgba(78,183,255,.11),transparent 29rem),radial-gradient(circle at 8% 55%,rgba(80,227,194,.06),transparent 24rem);z-index:-1}
+    a{color:inherit;text-decoration:none}
+    .wrap{width:min(calc(100% - 40px),var(--max));margin:auto}
+    .nav{position:fixed;top:0;left:0;right:0;z-index:20;background:rgba(9,11,16,.72);border-bottom:1px solid var(--line);backdrop-filter:blur(18px)}
+    .nav-inner{height:72px;display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;align-items:center;gap:11px;font-weight:800;letter-spacing:-.02em}
+    .mark{width:34px;height:34px;border:1px solid rgba(78,183,255,.45);display:grid;place-items:center;background:var(--blue-soft);color:var(--blue);border-radius:9px;font-size:13px}
+    .links{display:flex;gap:27px;color:var(--muted);font-size:14px;font-weight:600}
+    .links a:hover,.links a:focus{color:var(--text)}
+    .availability{display:flex;align-items:center;gap:9px;color:#c8fcef;font-size:13px;font-weight:700}
+    .dot{width:8px;height:8px;border-radius:50%;background:var(--cyan);box-shadow:0 0 0 5px rgba(80,227,194,.1)}
+    section{scroll-margin-top:88px}
+    .hero{min-height:92vh;padding:150px 0 82px;display:grid;align-items:center}
+    .hero-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(300px,.75fr);gap:80px;align-items:center}
+    .eyebrow{display:flex;align-items:center;gap:12px;color:var(--blue);font:700 12px/1.2 ui-monospace,SFMono-Regular,Menlo,monospace;text-transform:uppercase;letter-spacing:.15em}
+    .eyebrow:before{content:"";width:36px;height:1px;background:var(--blue)}
+    h1{font-size:clamp(3.3rem,8vw,7.1rem);line-height:.91;letter-spacing:-.07em;margin:24px 0 28px;max-width:850px}
+    h1 span{display:block;color:transparent;-webkit-text-stroke:1px rgba(241,245,249,.48)}
+    .lead{font-size:clamp(1.05rem,2vw,1.3rem);max-width:720px;color:#b8c2d1;margin:0 0 36px}
+    .lead strong{color:var(--text)}
+    .actions{display:flex;gap:14px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:13px 18px;border:1px solid var(--line);border-radius:9px;font-weight:750;font-size:14px;transition:.2s ease}
+    .btn.primary{background:var(--blue);color:#06111a;border-color:var(--blue)}
+    .btn:hover{transform:translateY(-2px);border-color:rgba(78,183,255,.55)}
+    .portrait-card{position:relative}
+    .portrait-shell{position:relative;border-radius:24px;padding:1px;background:linear-gradient(150deg,rgba(78,183,255,.7),rgba(255,255,255,.04) 50%,rgba(80,227,194,.25));box-shadow:0 30px 90px rgba(0,0,0,.38)}
+    .portrait{min-height:470px;border-radius:23px;background:linear-gradient(160deg,#17202e,#0c1017 70%);overflow:hidden;display:flex;align-items:flex-end;justify-content:center;position:relative}
+    .portrait:before{content:"RB";position:absolute;font-size:13rem;font-weight:900;letter-spacing:-.1em;color:rgba(255,255,255,.025);top:20px;right:20px}
+    .portrait img{width:88%;max-width:420px;display:block;filter:saturate(.85);position:relative;z-index:1}
+    .floating-label{position:absolute;left:-28px;bottom:32px;z-index:2;background:rgba(16,20,28,.94);border:1px solid var(--line);border-radius:12px;padding:13px 16px;box-shadow:0 18px 45px rgba(0,0,0,.3)}
+    .floating-label small{display:block;color:var(--muted);font:600 10px/1 ui-monospace,monospace;text-transform:uppercase;letter-spacing:.13em;margin-bottom:7px}
+    .floating-label b{font-size:14px}
+    .stats{border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .stat-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+    .stat{padding:29px 22px;border-right:1px solid var(--line)}
+    .stat:first-child{padding-left:0}.stat:last-child{border:0}
+    .stat b{display:block;font-size:25px;letter-spacing:-.04em}
+    .stat span{display:block;color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.09em;margin-top:3px}
+    .section{padding:118px 0}
+    .section-head{display:grid;grid-template-columns:.7fr 1.3fr;gap:60px;margin-bottom:58px;align-items:end}
+    .kicker{color:var(--blue);font:700 12px/1 ui-monospace,monospace;text-transform:uppercase;letter-spacing:.14em}
+    h2{font-size:clamp(2.2rem,5vw,4.2rem);line-height:1;letter-spacing:-.055em;margin:13px 0 0}
+    .section-intro{color:var(--muted);font-size:18px;margin:0;max-width:650px}
+    .project-list{border-top:1px solid var(--line)}
+    .project{display:grid;grid-template-columns:75px 1fr 1fr;gap:34px;padding:46px 0;border-bottom:1px solid var(--line);transition:.2s}
+    .project:hover{background:linear-gradient(90deg,transparent,rgba(78,183,255,.035),transparent)}
+    .num{color:#59687c;font:600 13px/1 ui-monospace,monospace;padding-top:8px}
+    .project h3{font-size:clamp(1.55rem,3vw,2.25rem);line-height:1.08;letter-spacing:-.035em;margin:0 0 10px}
+    .meta{color:var(--blue);font:650 11px/1.5 ui-monospace,monospace;text-transform:uppercase;letter-spacing:.1em}
+    .project-copy{color:var(--muted);margin:0 0 20px}
+    .tags{display:flex;flex-wrap:wrap;gap:8px}
+    .tag{border:1px solid var(--line);border-radius:999px;padding:5px 10px;color:#bdc7d5;font-size:11px;font-weight:650}
+    .experience{display:grid;grid-template-columns:.8fr 1.2fr;gap:90px}
+    .sticky{position:sticky;top:110px;align-self:start}
+    .sticky p{color:var(--muted);max-width:430px}
+    .timeline{border-left:1px solid var(--line)}
+    .role{position:relative;padding:0 0 54px 38px}
+    .role:last-child{padding-bottom:0}
+    .role:before{content:"";position:absolute;left:-5px;top:9px;width:9px;height:9px;background:var(--bg);border:2px solid var(--blue);border-radius:50%}
+    .role h3{font-size:22px;letter-spacing:-.025em;margin:0}
+    .role .company{color:var(--blue);font-weight:700;margin:2px 0 13px}
+    .role p{color:var(--muted);margin:0}
+    .skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+    .skill-card{background:linear-gradient(145deg,rgba(21,27,37,.9),rgba(14,18,25,.9));border:1px solid var(--line);padding:27px;border-radius:14px}
+    .skill-card .icon{font:700 12px/1 ui-monospace,monospace;color:var(--blue);margin-bottom:28px}
+    .skill-card h3{margin:0 0 11px;font-size:18px}
+    .skill-card p{margin:0;color:var(--muted);font-size:14px}
+    .contact{padding:100px 0 120px}
+    .contact-box{border:1px solid rgba(78,183,255,.25);border-radius:22px;padding:clamp(32px,7vw,78px);position:relative;overflow:hidden;background:linear-gradient(135deg,rgba(78,183,255,.09),rgba(80,227,194,.035) 50%,rgba(16,20,28,.8))}
+    .contact-box:after{content:"";position:absolute;width:300px;height:300px;border:1px solid rgba(78,183,255,.13);border-radius:50%;right:-100px;top:-130px}
+    .contact-box h2{max-width:800px;margin:0 0 24px}
+    .contact-box p{color:#b8c2d1;max-width:630px;font-size:18px;margin-bottom:32px}
+    footer{border-top:1px solid var(--line);padding:27px 0;color:var(--muted);font-size:13px}
+    .footer-inner{display:flex;justify-content:space-between;gap:20px}
+    .socials{display:flex;gap:22px}
+    .socials a:hover{color:var(--blue)}
+    .reveal{opacity:0;transform:translateY(20px);transition:opacity .65s ease,transform .65s ease}
+    .reveal.visible{opacity:1;transform:none}
+    @media(max-width:900px){
+      .availability{display:none}.hero-grid,.section-head,.experience{grid-template-columns:1fr}.hero-grid{gap:55px}.hero{padding-top:130px}.portrait-card{max-width:520px}.project{grid-template-columns:45px 1fr}.project>div:last-child{grid-column:2}.section-head{gap:24px}.experience{gap:50px}.sticky{position:static}.skills-grid{grid-template-columns:1fr 1fr}
+    }
+    @media(max-width:620px){
+      .wrap{width:min(calc(100% - 28px),var(--max))}.links{display:none}.hero{min-height:auto;padding-bottom:66px}h1{font-size:3.4rem}.portrait{min-height:390px}.floating-label{left:12px;bottom:12px}.stat-grid{grid-template-columns:1fr 1fr}.stat{border-bottom:1px solid var(--line)}.stat:nth-child(2){border-right:0}.stat:nth-child(3),.stat:nth-child(4){border-bottom:0}.stat:first-child,.stat:nth-child(3){padding-left:0}.section{padding:82px 0}.project{grid-template-columns:1fr;gap:12px}.project>div:last-child{grid-column:1}.num{padding:0}.skills-grid{grid-template-columns:1fr}.footer-inner{flex-direction:column}.contact{padding-top:60px}
+    }
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.btn{transition:none}}
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#top" aria-label="Back to top"><span class="mark">RB</span> Rayner Bestard</a>
+      <nav class="links" aria-label="Primary navigation">
+        <a href="#work">Work</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#contact">Contact</a>
+      </nav>
+      <div class="availability"><span class="dot"></span>Available for remote work</div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow">Unreal Engine · C++ · Blueprints</div>
+          <h1>Gameplay <span>Developer.</span></h1>
+          <p class="lead">I’m <strong>Rayner Bestard</strong>, an Unreal Engine Gameplay Developer and Technical Designer building responsive player systems, combat, AI, traversal and production tools.</p>
+          <div class="actions">
+            <a class="btn primary" href="#work">Explore selected work <span aria-hidden="true">↘</span></a>
+            <a class="btn" href="mailto:rayner.best@gmail.com">Get in touch</a>
+          </div>
+        </div>
+        <div class="portrait-card">
+          <div class="portrait-shell">
+            <div class="portrait">
+              <img src="https://avatars.githubusercontent.com/u/65691143?v=4" alt="Rayner Bestard" width="460" height="460">
+            </div>
+          </div>
+          <div class="floating-label"><small>Current focus</small><b>Gameplay systems & technical design</b></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="stats">
+      <div class="wrap stat-grid">
+        <div class="stat"><b>UE5</b><span>Primary engine</span></div>
+        <div class="stat"><b>C++ / BP</b><span>Core workflow</span></div>
+        <div class="stat"><b>5+ titles</b><span>Production experience</span></div>
+        <div class="stat"><b>PC · Mobile</b><span>Shipped platforms</span></div>
+      </div>
+    </div>
+
+    <section class="section" id="work">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div><span class="kicker">01 / Selected work</span><h2>Systems players can feel.</h2></div>
+          <p class="section-intro">From traversal and combat to AI and editor tooling, I turn game-design intent into maintainable, production-ready Unreal Engine systems.</p>
+        </div>
+        <div class="project-list">
+          <article class="project reveal">
+            <div class="num">01</div>
+            <div><h3>Kristala</h3><div class="meta">Astral Clocktower Studios · Unreal Engine 5</div></div>
+            <div><p class="project-copy">Contributed to the main character, animation integration, dialogue, NPC AI, traversal and combat abilities, while also developing editor tools that improved the content workflow.</p><div class="tags"><span class="tag">Gameplay</span><span class="tag">Traversal</span><span class="tag">Combat</span><span class="tag">AI</span><span class="tag">Tools</span></div></div>
+          </article>
+          <article class="project reveal">
+            <div class="num">02</div>
+            <div><h3>FusyFox: Mission to Mars</h3><div class="meta">PC · Epic Games · 2024</div></div>
+            <div><p class="project-copy">Built on the Lyra framework, developing modular weapons and characters, gameplay skills, UI and online matchmaking for a multiplayer shooter.</p><div class="tags"><span class="tag">Lyra</span><span class="tag">Multiplayer</span><span class="tag">UI</span><span class="tag">Matchmaking</span></div></div>
+          </article>
+          <article class="project reveal">
+            <div class="num">03</div>
+            <div><h3>Gold Fever: The Promised Land</h3><div class="meta">PC & macOS · 2023</div></div>
+            <div><p class="project-copy">Developed gameplay systems for a third-person survival RPG, including AI companions, dynamic camera behavior, inventory, UI and world interaction.</p><div class="tags"><span class="tag">Third Person</span><span class="tag">AI Companions</span><span class="tag">Inventory</span><span class="tag">Camera</span></div></div>
+          </article>
+          <article class="project reveal">
+            <div class="num">04</div>
+            <div><h3>Dark Life – Excalibur</h3><div class="meta">PlayStation Talents · Unreal Engine 5</div></div>
+            <div><p class="project-copy">Worked across game design, narrative and gameplay implementation, including traversal, save points and debugging systems. The project earned four nominations and two awards.</p><div class="tags"><span class="tag">Technical Design</span><span class="tag">Narrative</span><span class="tag">Traversal</span><span class="tag">Debug</span></div></div>
+          </article>
+          <article class="project reveal">
+            <div class="num">05</div>
+            <div><h3>A-Void: Corecube Adventure</h3><div class="meta">Android · 2022</div></div>
+            <div><p class="project-copy">Delivered the complete gameplay layer for a mobile title, spanning core mechanics, enemy AI, interface implementation and original soundtrack production.</p><div class="tags"><span class="tag">Mobile</span><span class="tag">Full Gameplay</span><span class="tag">AI</span><span class="tag">UI</span></div></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="experience">
+      <div class="wrap experience">
+        <div class="sticky reveal">
+          <span class="kicker">02 / Experience</span>
+          <h2>Design-minded engineering.</h2>
+          <p>I work comfortably between code and design: prototyping quickly, collaborating with artists and designers, and carrying systems through iteration, debugging and optimization.</p>
+        </div>
+        <div class="timeline">
+          <article class="role reveal"><h3>Gameplay Programmer</h3><div class="company">Astral Clocktower Studios · Kristala</div><p>Owned and extended player-facing features in UE5, integrated animation and gameplay, developed NPC behavior, and supported the team with practical editor tooling.</p></article>
+          <article class="role reveal"><h3>Co-founder · Gameplay Developer</h3><div class="company">Insane Games Studio</div><p>Designed and implemented gameplay across independent projects, working from early prototypes through production with a broad technical and creative remit.</p></article>
+          <article class="role reveal"><h3>Technical Game Designer</h3><div class="company">Independent & collaborative projects</div><p>Translated mechanics into scalable systems, built rapid prototypes, tuned player feel and communicated implementation constraints without losing the design goal.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="skills">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div><span class="kicker">03 / Expertise</span><h2>Built for iteration.</h2></div>
+          <p class="section-intro">A practical toolkit shaped by real production needs—from moment-to-moment gameplay to the workflows that help teams ship.</p>
+        </div>
+        <div class="skills-grid">
+          <article class="skill-card reveal"><div class="icon">SYS_01</div><h3>Player Mechanics</h3><p>Character movement, traversal, camera systems, interaction, abilities and responsive controls.</p></article>
+          <article class="skill-card reveal"><div class="icon">SYS_02</div><h3>Combat & Abilities</h3><p>Melee and ranged combat, directional damage, ability logic, targeting and animation-driven gameplay.</p></article>
+          <article class="skill-card reveal"><div class="icon">SYS_03</div><h3>AI Systems</h3><p>Behavior Trees, AI Perception, companions, enemies, debugging and network-aware gameplay.</p></article>
+          <article class="skill-card reveal"><div class="icon">TECH_01</div><h3>Unreal Engine</h3><p>UE5, C++, Blueprints, Animation Blueprints, Gameplay Tags, Lyra and Gameplay Ability System familiarity.</p></article>
+          <article class="skill-card reveal"><div class="icon">TECH_02</div><h3>Networking</h3><p>Replication, client/server architecture, Steam and Epic Online Services integration.</p></article>
+          <article class="skill-card reveal"><div class="icon">TECH_03</div><h3>Tools & Optimization</h3><p>Editor utilities, debugging overlays, data-driven workflows, animation Fast Path and runtime profiling.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="wrap">
+        <div class="contact-box reveal">
+          <span class="kicker">04 / Contact</span>
+          <h2>Let’s build gameplay worth mastering.</h2>
+          <p>I’m open to remote gameplay programming, technical design and Unreal Engine collaborations.</p>
+          <div class="actions">
+            <a class="btn primary" href="mailto:rayner.best@gmail.com">rayner.best@gmail.com</a>
+            <a class="btn" href="https://www.linkedin.com/in/rayner-bestard-d%C3%ADaz" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+            <a class="btn" href="https://github.com/raynerbest" target="_blank" rel="noreferrer">GitHub ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="wrap footer-inner"><span>© <span id="year"></span> Rayner Bestard</span><div class="socials"><a href="mailto:rayner.best@gmail.com">Email</a><a href="https://www.linkedin.com/in/rayner-bestard-d%C3%ADaz" target="_blank" rel="noreferrer">LinkedIn</a><a href="https://github.com/raynerbest" target="_blank" rel="noreferrer">GitHub</a></div></div></footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const observer = new IntersectionObserver(entries => entries.forEach(entry => {
+      if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+    }), { threshold: .12 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
