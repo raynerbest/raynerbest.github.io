@@ -69,6 +69,12 @@
     .project h3{font-size:clamp(1.55rem,3vw,2.25rem);line-height:1.08;letter-spacing:-.035em;margin:0 0 10px}
     .meta{color:var(--blue);font:650 11px/1.5 ui-monospace,monospace;text-transform:uppercase;letter-spacing:.1em}
     .project-copy{color:var(--muted);margin:0 0 20px}
+    .project-visual{margin:0;align-self:start}
+    .project-visual img{width:100%;aspect-ratio:16/9;display:block;object-fit:cover;border-radius:12px;border:1px solid var(--line);box-shadow:0 18px 42px rgba(0,0,0,.28)}
+    .project-credit{display:block;margin-top:8px;color:#66758a;font:500 10px/1.45 ui-monospace,monospace}
+    .project-links{display:flex;flex-wrap:wrap;gap:10px;margin:20px 0 0}
+    .project-link{display:inline-flex;align-items:center;padding:8px 12px;border:1px solid rgba(78,183,255,.3);border-radius:8px;color:var(--blue);font-size:12px;font-weight:750;transition:.2s ease}
+    .project-link:hover,.project-link:focus{background:var(--blue-soft);border-color:var(--blue)}
     .tags{display:flex;flex-wrap:wrap;gap:8px}
     .tag{border:1px solid var(--line);border-radius:999px;padding:5px 10px;color:#bdc7d5;font-size:11px;font-weight:650}
     .experience{display:grid;grid-template-columns:.8fr 1.2fr;gap:90px}
@@ -158,8 +164,8 @@
         <div class="project-list">
           <article class="project reveal">
             <div class="num">01</div>
-            <div><h3>Kristala</h3><div class="meta">Astral Clocktower Studios · Unreal Engine 5</div></div>
-            <div><p class="project-copy">Contributed to the main character, animation integration, dialogue, NPC AI, traversal and combat abilities, while also developing editor tools that improved the content workflow.</p><div class="tags"><span class="tag">Gameplay</span><span class="tag">Traversal</span><span class="tag">Combat</span><span class="tag">AI</span><span class="tag">Tools</span></div></div>
+            <figure class="project-visual"><img src="assets/kristala-gameplay.webp" alt="Official Kristala gameplay screenshot showing melee combat" width="1400" height="788" loading="lazy"><figcaption class="project-credit">Official press-kit image · © Astral Clocktower Studios</figcaption></figure>
+            <div><h3>Kristala</h3><div class="meta">Astral Clocktower Studios · Unreal Engine 5</div><p class="project-copy">Contributed to the main character, animation integration, dialogue, NPC AI, traversal and combat abilities, while also developing editor tools that improved the content workflow.</p><div class="tags"><span class="tag">Gameplay</span><span class="tag">Traversal</span><span class="tag">Combat</span><span class="tag">AI</span><span class="tag">Tools</span></div><div class="project-links"><a class="project-link" href="https://store.steampowered.com/app/1206410/Kristala/" target="_blank" rel="noreferrer">View on Steam ↗</a><a class="project-link" href="https://www.astralclocktowerstudios.com/kristala" target="_blank" rel="noreferrer">Official site ↗</a></div></div>
           </article>
           <article class="project reveal">
             <div class="num">02</div>
