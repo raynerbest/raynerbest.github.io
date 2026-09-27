@@ -87,7 +87,7 @@
     .role h3{font-size:22px;letter-spacing:-.025em;margin:0}
     .role .company{color:var(--blue);font-weight:700;margin:2px 0 13px}
     .role p{color:var(--muted);margin:0}
-    .skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+    .studio-section{padding-top:40px}.studio-grid{display:grid;grid-template-columns:1.4fr .6fr;gap:70px;align-items:center;padding:48px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(135deg,rgba(21,27,37,.9),rgba(78,183,255,.055))}.studio-grid h2{margin:14px 0 24px}.studio-grid p{color:var(--muted);max-width:670px}.studio-grid .btn{margin-top:16px}.studio-focus{border-left:1px solid var(--line);padding-left:42px}.studio-focus ul{list-style:none;padding:0;margin:24px 0 0}.studio-focus li{padding:12px 0;border-bottom:1px solid var(--line);font-weight:650}.studio-focus li:last-child{border-bottom:0}.skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
     .skill-card{background:linear-gradient(145deg,rgba(21,27,37,.9),rgba(14,18,25,.9));border:1px solid var(--line);padding:27px;border-radius:14px}
     .skill-card .icon{font:700 12px/1 ui-monospace,monospace;color:var(--blue);margin-bottom:28px}
     .skill-card h3{margin:0 0 11px;font-size:18px}
@@ -117,10 +117,10 @@
     .reveal{opacity:0;transform:translateY(20px);transition:opacity .65s ease,transform .65s ease}
     .reveal.visible{opacity:1;transform:none}
     @media(max-width:900px){
-      .availability{display:none}.hero-grid,.section-head,.experience{grid-template-columns:1fr}.hero-grid{gap:55px}.hero{padding-top:130px}.portrait-card{max-width:520px}.project{grid-template-columns:45px 1fr}.project>div:last-child{grid-column:2}.section-head{gap:24px}.experience{gap:50px}.sticky{position:static}.skills-grid{grid-template-columns:1fr 1fr}.notes-grid{grid-template-columns:1fr 1fr}.note-card:last-child{grid-column:1/-1;min-height:230px}
+      .availability{display:none}.hero-grid,.section-head,.experience,.studio-grid{grid-template-columns:1fr}.studio-grid{gap:28px}.studio-focus{border-left:0;border-top:1px solid var(--line);padding:22px 0 0}.hero-grid{gap:55px}.hero{padding-top:130px}.portrait-card{max-width:520px}.project{grid-template-columns:45px 1fr}.project>div:last-child{grid-column:2}.section-head{gap:24px}.experience{gap:50px}.sticky{position:static}.skills-grid{grid-template-columns:1fr 1fr}.notes-grid{grid-template-columns:1fr 1fr}.note-card:last-child{grid-column:1/-1;min-height:230px}
     }
     @media(max-width:620px){
-      .wrap{width:min(calc(100% - 28px),var(--max))}.nav-inner{height:auto;min-height:72px;flex-wrap:wrap;gap:8px;padding:10px 0}.links{display:flex;order:3;width:100%;gap:18px;overflow-x:auto;white-space:nowrap;padding:3px 0 8px;scrollbar-width:thin}.links a{flex:none}.hero{min-height:auto;padding-top:160px;padding-bottom:66px}section{scroll-margin-top:125px}h1{font-size:3.4rem}.portrait{aspect-ratio:1/1.08}.portrait img{object-position:center 18%}.floating-label{left:12px;bottom:12px}.stat-grid{grid-template-columns:1fr 1fr}.stat{border-bottom:1px solid var(--line)}.stat:nth-child(2){border-right:0}.stat:nth-child(3),.stat:nth-child(4){border-bottom:0}.stat:first-child,.stat:nth-child(3){padding-left:0}.section{padding:82px 0}.project{grid-template-columns:1fr;gap:12px}.project>div:last-child{grid-column:1}.num{padding:0}.skills-grid,.notes-grid{grid-template-columns:1fr}.note-card:last-child{grid-column:auto;min-height:290px}.footer-inner{flex-direction:column}.resume{padding-bottom:70px}.resume-card{grid-template-columns:1fr;padding:28px 24px}.resume-actions{justify-content:flex-start}.contact{padding-top:60px}
+      .wrap{width:min(calc(100% - 28px),var(--max))}.nav-inner{height:auto;min-height:72px;flex-wrap:wrap;gap:8px;padding:10px 0}.links{display:flex;order:3;width:100%;gap:18px;overflow-x:auto;white-space:nowrap;padding:3px 0 8px;scrollbar-width:thin}.links a{flex:none}.hero{min-height:auto;padding-top:160px;padding-bottom:66px}section{scroll-margin-top:125px}h1{font-size:3.4rem}.portrait{aspect-ratio:1/1.08}.portrait img{object-position:center 18%}.floating-label{left:12px;bottom:12px}.stat-grid{grid-template-columns:1fr 1fr}.stat{border-bottom:1px solid var(--line)}.stat:nth-child(2){border-right:0}.stat:nth-child(3),.stat:nth-child(4){border-bottom:0}.stat:first-child,.stat:nth-child(3){padding-left:0}.section{padding:82px 0}.project{grid-template-columns:1fr;gap:12px}.project>div:last-child{grid-column:1}.num{padding:0}.skills-grid,.notes-grid{grid-template-columns:1fr}.note-card:last-child{grid-column:auto;min-height:290px}.footer-inner{flex-direction:column}.resume{padding-bottom:70px}.resume-card{grid-template-columns:1fr;padding:28px 24px}.studio-grid{padding:28px 24px}.resume-actions{justify-content:flex-start}.contact{padding-top:60px}
     }
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.btn{transition:none}}
   </style>
@@ -130,7 +130,7 @@
     <div class="wrap nav-inner">
       <a class="brand" href="#top" aria-label="Back to top"><span class="mark">RB</span> Rayner Bestard</a>
       <nav class="links" aria-label="Primary navigation">
-        <a href="#work">Work</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="blog/">Blog</a><a href="#resume">Résumé</a><a href="#contact">Contact</a>
+        <a href="#work">Work</a><a href="#experience">Experience</a><a href="#studio">Studio</a><a href="#skills">Skills</a><a href="blog/">Blog</a><a href="#resume">Résumé</a><a href="#contact">Contact</a>
       </nav>
       <div class="availability"><span class="dot"></span>Available for remote work</div>
     </div>
@@ -214,7 +214,7 @@
         </div>
         <div class="timeline">
           <article class="role reveal"><h3>Gameplay Programmer · Technical Designer</h3><div class="company">Astral Clocktower Studios · Kristala · 2023–2025</div><p>Built player movement, combat and traversal features, integrated animation and NPC behavior, and created editor tools for the team.</p></article>
-          <article class="role reveal"><h3>Co-founder · Lead Game Developer</h3><div class="company">Insane Games Studio · 2023–present</div><p>Lead Unreal Engine prototypes from concept into playable systems and coordinate implementation with a small team.</p></article>
+          <article class="role reveal"><h3>Co-founder · Lead Game Developer</h3><div class="company">Insane Games Studios · 2023–present</div><p>Lead Unreal Engine prototypes from concept into playable systems and coordinate implementation with a small team.</p></article>
           <article class="role reveal"><h3>Gameplay Programmer · Technical Designer</h3><div class="company">Fusyona · FusyFox: Mission to Mars · 2022–2025</div><p>Built modular multiplayer gameplay, abilities and UI within a Lyra-based project.</p></article>
           <article class="role reveal"><h3>Lead Gameplay Programmer · Technical Designer</h3><div class="company">ZERO Studios · Dark Life: Excalibur · 2020–2024</div><p>Designed gameplay systems and led implementation of combat, traversal, AI, progression and interfaces.</p></article>
           <article class="role reveal"><h3>Gameplay Programmer</h3><div class="company">Bitter Cherry Productions · Gold Fever · 2020–2023</div><p>Implemented RPG gameplay, AI, animation logic, inventory, interaction and camera systems.</p></article>
@@ -222,10 +222,28 @@
       </div>
     </section>
 
+    <section class="section studio-section" id="studio">
+      <div class="wrap">
+        <div class="studio-grid reveal">
+          <div>
+            <span class="kicker">03 / Co-founded studio</span>
+            <h2>Insane Games Studios.</h2>
+            <p>I co-founded Insane Games Studios with a collaborator to support other teams with game development and art. It is our independent outsourcing initiative, combining programming, design and 2D/3D production.</p>
+            <p>My contribution centers on Unreal Engine gameplay development and technical design, from prototyping mechanics to integrating systems in a team’s production workflow.</p>
+            <a class="btn" href="https://www.linkedin.com/company/insane-game" target="_blank" rel="noreferrer">Visit the studio on LinkedIn ↗</a>
+          </div>
+          <div class="studio-focus">
+            <span class="meta">Studio focus</span>
+            <ul><li>Gameplay programming</li><li>Game design</li><li>2D &amp; 3D art</li><li>Unreal Engine development</li></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="section" id="skills">
       <div class="wrap">
         <div class="section-head reveal">
-          <div><span class="kicker">03 / Expertise</span><h2>Built for iteration.</h2></div>
+          <div><span class="kicker">04 / Expertise</span><h2>Built for iteration.</h2></div>
           <p class="section-intro">A practical toolkit shaped by real production needs—from moment-to-moment gameplay to the workflows that help teams ship.</p>
         </div>
         <div class="skills-grid">
@@ -242,7 +260,7 @@
     <section class="section" id="notes">
       <div class="wrap">
         <div class="section-head reveal">
-          <div><span class="kicker">04 / Technical notes</span><h2>How I approach the work.</h2></div>
+          <div><span class="kicker">05 / Technical notes</span><h2>How I approach the work.</h2></div>
           <p class="section-intro">Implementation notes on Unreal Engine systems, debugging, animation and cinematics—focused on the decisions behind the solution.</p>
         </div>
         <div class="notes-grid">
@@ -258,7 +276,7 @@
       <div class="wrap">
         <div class="resume-card reveal">
           <div>
-            <span class="kicker">05 / Résumé</span>
+            <span class="kicker">06 / Résumé</span>
             <h2>Experience at a glance.</h2>
             <p>Download my English résumé for a concise overview of my Unreal Engine, gameplay programming and technical design experience.</p>
           </div>
@@ -273,7 +291,7 @@
     <section class="contact" id="contact">
       <div class="wrap">
         <div class="contact-box reveal">
-          <span class="kicker">06 / Contact</span>
+          <span class="kicker">07 / Contact</span>
           <h2>Let’s build gameplay worth mastering.</h2>
           <p>I’m open to remote gameplay programming, technical design and Unreal Engine collaborations.</p>
           <div class="actions">
