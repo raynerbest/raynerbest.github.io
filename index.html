@@ -92,6 +92,11 @@
     .skill-card .icon{font:700 12px/1 ui-monospace,monospace;color:var(--blue);margin-bottom:28px}
     .skill-card h3{margin:0 0 11px;font-size:18px}
     .skill-card p{margin:0;color:var(--muted);font-size:14px}
+    .resume{padding:20px 0 96px}
+    .resume-card{display:grid;grid-template-columns:1.2fr auto;gap:42px;align-items:center;padding:36px 40px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(135deg,rgba(21,27,37,.92),rgba(78,183,255,.055))}
+    .resume-card h2{font-size:clamp(2rem,4vw,3.2rem);margin:8px 0 12px}
+    .resume-card p{max-width:680px;margin:0;color:var(--muted)}
+    .resume-actions{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
     .contact{padding:100px 0 120px}
     .contact-box{border:1px solid rgba(78,183,255,.25);border-radius:22px;padding:clamp(32px,7vw,78px);position:relative;overflow:hidden;background:linear-gradient(135deg,rgba(78,183,255,.09),rgba(80,227,194,.035) 50%,rgba(16,20,28,.8))}
     .contact-box:after{content:"";position:absolute;width:300px;height:300px;border:1px solid rgba(78,183,255,.13);border-radius:50%;right:-100px;top:-130px}
@@ -107,7 +112,7 @@
       .availability{display:none}.hero-grid,.section-head,.experience{grid-template-columns:1fr}.hero-grid{gap:55px}.hero{padding-top:130px}.portrait-card{max-width:520px}.project{grid-template-columns:45px 1fr}.project>div:last-child{grid-column:2}.section-head{gap:24px}.experience{gap:50px}.sticky{position:static}.skills-grid{grid-template-columns:1fr 1fr}
     }
     @media(max-width:620px){
-      .wrap{width:min(calc(100% - 28px),var(--max))}.links{display:none}.hero{min-height:auto;padding-bottom:66px}h1{font-size:3.4rem}.portrait{aspect-ratio:1/1.08}.portrait img{object-position:center 18%}.floating-label{left:12px;bottom:12px}.stat-grid{grid-template-columns:1fr 1fr}.stat{border-bottom:1px solid var(--line)}.stat:nth-child(2){border-right:0}.stat:nth-child(3),.stat:nth-child(4){border-bottom:0}.stat:first-child,.stat:nth-child(3){padding-left:0}.section{padding:82px 0}.project{grid-template-columns:1fr;gap:12px}.project>div:last-child{grid-column:1}.num{padding:0}.skills-grid{grid-template-columns:1fr}.footer-inner{flex-direction:column}.contact{padding-top:60px}
+      .wrap{width:min(calc(100% - 28px),var(--max))}.links{display:none}.hero{min-height:auto;padding-bottom:66px}h1{font-size:3.4rem}.portrait{aspect-ratio:1/1.08}.portrait img{object-position:center 18%}.floating-label{left:12px;bottom:12px}.stat-grid{grid-template-columns:1fr 1fr}.stat{border-bottom:1px solid var(--line)}.stat:nth-child(2){border-right:0}.stat:nth-child(3),.stat:nth-child(4){border-bottom:0}.stat:first-child,.stat:nth-child(3){padding-left:0}.section{padding:82px 0}.project{grid-template-columns:1fr;gap:12px}.project>div:last-child{grid-column:1}.num{padding:0}.skills-grid{grid-template-columns:1fr}.footer-inner{flex-direction:column}.resume{padding-bottom:70px}.resume-card{grid-template-columns:1fr;padding:28px 24px}.resume-actions{justify-content:flex-start}.contact{padding-top:60px}
     }
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.btn{transition:none}}
   </style>
@@ -117,7 +122,7 @@
     <div class="wrap nav-inner">
       <a class="brand" href="#top" aria-label="Back to top"><span class="mark">RB</span> Rayner Bestard</a>
       <nav class="links" aria-label="Primary navigation">
-        <a href="#work">Work</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#contact">Contact</a>
+        <a href="#work">Work</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#resume">Résumé</a><a href="#contact">Contact</a>
       </nav>
       <div class="availability"><span class="dot"></span>Available for remote work</div>
     </div>
@@ -133,6 +138,7 @@
           <div class="actions">
             <a class="btn primary" href="#work">Explore selected work <span aria-hidden="true">↘</span></a>
             <a class="btn" href="mailto:rayner.best@gmail.com">Get in touch</a>
+            <a class="btn" href="assets/Rayner-Bestard-Resume.pdf" download>Download résumé ↓</a>
           </div>
         </div>
         <div class="portrait-card">
@@ -223,10 +229,26 @@
       </div>
     </section>
 
+    <section class="resume" id="resume">
+      <div class="wrap">
+        <div class="resume-card reveal">
+          <div>
+            <span class="kicker">04 / Résumé</span>
+            <h2>Experience at a glance.</h2>
+            <p>Download my English résumé for a concise overview of my Unreal Engine, gameplay programming and technical design experience.</p>
+          </div>
+          <div class="resume-actions">
+            <a class="btn primary" href="assets/Rayner-Bestard-Resume.pdf" download>Download résumé · PDF ↓</a>
+            <a class="btn" href="assets/Rayner-Bestard-Resume.pdf" target="_blank" rel="noreferrer">View online ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="contact" id="contact">
       <div class="wrap">
         <div class="contact-box reveal">
-          <span class="kicker">04 / Contact</span>
+          <span class="kicker">05 / Contact</span>
           <h2>Let’s build gameplay worth mastering.</h2>
           <p>I’m open to remote gameplay programming, technical design and Unreal Engine collaborations.</p>
           <div class="actions">
