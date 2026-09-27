@@ -92,6 +92,14 @@
     .skill-card .icon{font:700 12px/1 ui-monospace,monospace;color:var(--blue);margin-bottom:28px}
     .skill-card h3{margin:0 0 11px;font-size:18px}
     .skill-card p{margin:0;color:var(--muted);font-size:14px}
+    .notes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+    .note-card{display:flex;flex-direction:column;min-height:290px;padding:27px;border:1px solid var(--line);border-radius:14px;background:linear-gradient(145deg,rgba(21,27,37,.9),rgba(14,18,25,.9));transition:.2s ease}
+    .note-card:hover{transform:translateY(-3px);border-color:rgba(78,183,255,.4)}
+    .note-card .meta{margin-bottom:18px}
+    .note-card h3{font-size:21px;line-height:1.16;letter-spacing:-.03em;margin:0 0 13px}
+    .note-card p{color:var(--muted);font-size:14px;margin:0}
+    .note-card .read{color:var(--blue);font-size:12px;font-weight:750;margin-top:auto;padding-top:24px}
+    .notes-footer{display:flex;justify-content:flex-end;margin-top:24px}
     .resume{padding:20px 0 96px}
     .resume-card{display:grid;grid-template-columns:1.2fr auto;gap:42px;align-items:center;padding:36px 40px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(135deg,rgba(21,27,37,.92),rgba(78,183,255,.055))}
     .resume-card h2{font-size:clamp(2rem,4vw,3.2rem);margin:8px 0 12px}
@@ -109,10 +117,10 @@
     .reveal{opacity:0;transform:translateY(20px);transition:opacity .65s ease,transform .65s ease}
     .reveal.visible{opacity:1;transform:none}
     @media(max-width:900px){
-      .availability{display:none}.hero-grid,.section-head,.experience{grid-template-columns:1fr}.hero-grid{gap:55px}.hero{padding-top:130px}.portrait-card{max-width:520px}.project{grid-template-columns:45px 1fr}.project>div:last-child{grid-column:2}.section-head{gap:24px}.experience{gap:50px}.sticky{position:static}.skills-grid{grid-template-columns:1fr 1fr}
+      .availability{display:none}.hero-grid,.section-head,.experience{grid-template-columns:1fr}.hero-grid{gap:55px}.hero{padding-top:130px}.portrait-card{max-width:520px}.project{grid-template-columns:45px 1fr}.project>div:last-child{grid-column:2}.section-head{gap:24px}.experience{gap:50px}.sticky{position:static}.skills-grid{grid-template-columns:1fr 1fr}.notes-grid{grid-template-columns:1fr 1fr}.note-card:last-child{grid-column:1/-1;min-height:230px}
     }
     @media(max-width:620px){
-      .wrap{width:min(calc(100% - 28px),var(--max))}.links{display:none}.hero{min-height:auto;padding-bottom:66px}h1{font-size:3.4rem}.portrait{aspect-ratio:1/1.08}.portrait img{object-position:center 18%}.floating-label{left:12px;bottom:12px}.stat-grid{grid-template-columns:1fr 1fr}.stat{border-bottom:1px solid var(--line)}.stat:nth-child(2){border-right:0}.stat:nth-child(3),.stat:nth-child(4){border-bottom:0}.stat:first-child,.stat:nth-child(3){padding-left:0}.section{padding:82px 0}.project{grid-template-columns:1fr;gap:12px}.project>div:last-child{grid-column:1}.num{padding:0}.skills-grid{grid-template-columns:1fr}.footer-inner{flex-direction:column}.resume{padding-bottom:70px}.resume-card{grid-template-columns:1fr;padding:28px 24px}.resume-actions{justify-content:flex-start}.contact{padding-top:60px}
+      .wrap{width:min(calc(100% - 28px),var(--max))}.links{display:none}.hero{min-height:auto;padding-bottom:66px}h1{font-size:3.4rem}.portrait{aspect-ratio:1/1.08}.portrait img{object-position:center 18%}.floating-label{left:12px;bottom:12px}.stat-grid{grid-template-columns:1fr 1fr}.stat{border-bottom:1px solid var(--line)}.stat:nth-child(2){border-right:0}.stat:nth-child(3),.stat:nth-child(4){border-bottom:0}.stat:first-child,.stat:nth-child(3){padding-left:0}.section{padding:82px 0}.project{grid-template-columns:1fr;gap:12px}.project>div:last-child{grid-column:1}.num{padding:0}.skills-grid,.notes-grid{grid-template-columns:1fr}.note-card:last-child{grid-column:auto;min-height:290px}.footer-inner{flex-direction:column}.resume{padding-bottom:70px}.resume-card{grid-template-columns:1fr;padding:28px 24px}.resume-actions{justify-content:flex-start}.contact{padding-top:60px}
     }
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.btn{transition:none}}
   </style>
@@ -122,7 +130,7 @@
     <div class="wrap nav-inner">
       <a class="brand" href="#top" aria-label="Back to top"><span class="mark">RB</span> Rayner Bestard</a>
       <nav class="links" aria-label="Primary navigation">
-        <a href="#work">Work</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#resume">Résumé</a><a href="#contact">Contact</a>
+        <a href="#work">Work</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="blog/">Blog</a><a href="#resume">Résumé</a><a href="#contact">Contact</a>
       </nav>
       <div class="availability"><span class="dot"></span>Available for remote work</div>
     </div>
@@ -229,11 +237,26 @@
       </div>
     </section>
 
+    <section class="section" id="notes">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div><span class="kicker">04 / Technical notes</span><h2>How I approach the work.</h2></div>
+          <p class="section-intro">Implementation notes on Unreal Engine systems, debugging, animation and cinematics—focused on the decisions behind the solution.</p>
+        </div>
+        <div class="notes-grid">
+          <a class="note-card reveal" href="blog/cheat-manager.html"><div class="meta">Debugging · Unreal Engine</div><h3>Cheat Manager: Faster Debugging Through Console Commands</h3><p>Turn repetitive test scenarios into direct, reusable commands while keeping development logic out of shipping builds.</p><span class="read">Read technical note →</span></a>
+          <a class="note-card reveal" href="blog/sequencer-transitions.html"><div class="meta">Cinematics · Sequencer</div><h3>Seamless Gameplay-to-Cutscene Transitions</h3><p>Use the existing gameplay actor, dynamic transforms and binding tags to reduce duplicate actors and transition logic.</p><span class="read">Read technical note →</span></a>
+          <a class="note-card reveal" href="blog/time-reversal.html"><div class="meta">Gameplay systems · Blueprints</div><h3>A Reusable Time-Reversal Effect</h3><p>A component-based rewind prototype that records meaningful transform changes and manages history deliberately.</p><span class="read">Read technical note →</span></a>
+        </div>
+        <div class="notes-footer reveal"><a class="btn" href="blog/">View all technical notes ↗</a></div>
+      </div>
+    </section>
+
     <section class="resume" id="resume">
       <div class="wrap">
         <div class="resume-card reveal">
           <div>
-            <span class="kicker">04 / Résumé</span>
+            <span class="kicker">05 / Résumé</span>
             <h2>Experience at a glance.</h2>
             <p>Download my English résumé for a concise overview of my Unreal Engine, gameplay programming and technical design experience.</p>
           </div>
@@ -248,7 +271,7 @@
     <section class="contact" id="contact">
       <div class="wrap">
         <div class="contact-box reveal">
-          <span class="kicker">05 / Contact</span>
+          <span class="kicker">06 / Contact</span>
           <h2>Let’s build gameplay worth mastering.</h2>
           <p>I’m open to remote gameplay programming, technical design and Unreal Engine collaborations.</p>
           <div class="actions">
