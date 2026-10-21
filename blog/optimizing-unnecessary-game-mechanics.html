@@ -1,0 +1,212 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#090b10"><meta name="description" content="Why questioning a feature's purpose can be more valuable than improving its implementation. A reflection on game design, complexity, iteration and Dark Life: Excalibur."><meta property="og:type" content="article"><meta property="og:title" content="Are We Optimizing Game Mechanics That Shouldn't Exist?"><meta property="og:description" content="Why questioning a feature's purpose can be more valuable than improving its implementation."><meta property="og:url" content="https://raynerbest.github.io/blog/optimizing-unnecessary-game-mechanics.html"><meta property="article:published_time" content="2026-10-20"><meta name="author" content="Rayner Bestard"><title>Are We Optimizing Game Mechanics That Shouldn't Exist? | Rayner Bestard</title><link rel="canonical" href="https://raynerbest.github.io/blog/optimizing-unnecessary-game-mechanics.html"><link rel="stylesheet" href="style.css"><style>.article-body p{margin:0 0 1.2em}.article-body h2{margin-top:2.3em}.article-body hr{border:0;border-top:1px solid rgba(255,255,255,.15);margin:2em 0}.article-body{overflow-wrap:anywhere}</style></head><body><header class="nav"><div class="wrap nav-inner"><a class="brand" href="../"><span class="mark">RB</span> Rayner Bestard</a><nav class="nav-links"><a href="./">Technical Notes</a><a class="hide-mobile" href="../#work">Portfolio</a></nav></div></header><main><header class="article-head"><div class="wrap"><div class="article-meta">Game Design · October 20, 2026 · Rayner Bestard</div><h1>Are We Optimizing Game Mechanics That Shouldn't Exist?</h1><p class="article-deck">Why questioning a feature's purpose can be more valuable than improving its implementation.</p><div class="tags"><span class="tag">Game Design</span><span class="tag">Game Development</span><span class="tag">Software Engineering</span><span class="tag">Production</span></div></div></header><div class="wrap article-layout"><article class="article-body"><p>One of the most dangerous things a development team can do is become extremely good at solving the wrong problem.</p>
+<p>Recently, I came across Elon Musk's five-step engineering process. One of its principles particularly caught my attention: engineers often spend significant amounts of time optimizing things that should not exist in the first place.</p>
+<p>It's a deceptively simple observation, but the more I thought about it, the more relevant it became to game development.</p>
+<p>How often do we spend days, weeks, or even months implementing, debugging, balancing, or optimizing a feature without seriously questioning whether that feature should be part of the game at all?</p>
+<p>And perhaps more importantly, how often do we mistake the successful implementation of a mechanic for a successful design decision?</p>
+<p>I believe this distinction deserves much more attention.</p><h2>Building Something Right Doesn't Mean We're Building the Right Thing</h2><p>As developers, we are naturally inclined to solve problems.</p>
+<p>When a mechanic doesn't behave as expected, we investigate. When a system becomes too expensive, we optimize. When players struggle with a feature, we adjust its parameters. When two systems conflict, we introduce rules to manage their interactions.</p>
+<p>This is an essential part of our work.</p>
+<p>But there is a fundamental difference between improving how something works and questioning whether it needs to exist.</p>
+<p>Consider a hypothetical action-adventure game featuring a stamina system that limits how long the player can sprint.</p>
+<p>During playtesting, the team discovers that players frequently become frustrated because they must stop running while exploring large environments.</p>
+<p>The immediate response might be to improve the system.</p>
+<p>A gameplay programmer adjusts stamina consumption and regeneration. A designer introduces different stamina costs depending on movement speed. UI artists improve the stamina indicator. Animators refine exhausted movement transitions. QA tests the resulting combinations.</p>
+<p>Eventually, the system becomes more polished.</p>
+<p>But what if the underlying problem was never the stamina consumption rate?</p>
+<p>What if the game simply doesn't benefit from limiting the player's ability to sprint?</p>
+<p>If sprinting doesn't introduce a meaningful risk, resource-management decision, or strategic trade-off, perhaps the mechanic is adding friction without creating value.</p>
+<p>In that case, the team may have spent considerable effort improving a system that the game would be better without.</p>
+<p>Of course, stamina is not inherently a bad mechanic.</p>
+<p>In games such as Dark Souls or Elden Ring, stamina management plays an important role in combat, influencing the player's decisions about attacking, defending, and positioning.</p>
+<p>The same mechanic can be meaningful in one game and unnecessary in another.</p>
+<p>A mechanic's value doesn't come from how sophisticated its implementation is. It comes from what it contributes to the player's experience.</p><h2>When Complexity Is Mistaken for Depth</h2><p>I think this problem is closely connected to another tendency in game development: assuming that adding more systems automatically creates a deeper experience.</p>
+<p>More abilities. More resources. More progression layers. More interactions. More combat modifiers.</p>
+<p>Each addition may sound reasonable when evaluated individually.</p>
+<p>But complexity and depth are not the same thing.</p>
+<p>Complexity describes, among other things, how many rules, systems, and variables a player must understand or manage.</p>
+<p>Depth emerges from the meaningful possibilities and decisions those systems create.</p>
+<p>Tetris is an excellent example of how relatively simple rules can produce extraordinary depth.</p>
+<p>Its fundamental mechanics are easy to understand, yet their interactions create increasingly demanding decisions involving spatial reasoning, risk management, and planning.</p>
+<p>Now imagine a game containing dozens of interconnected mechanics that rarely force the player to make interesting decisions.</p>
+<p>Such a game may be mechanically complex without being particularly deep.</p>
+<p>This is why I believe every significant addition should be evaluated not only in terms of what it allows the player to do, but also in terms of what it contributes to the overall experience.</p>
+<p>Does it create interesting choices?</p>
+<p>Does it reinforce the game's core experience?</p>
+<p>Does it interact meaningfully with existing systems?</p>
+<p>Or does it simply give the player one more thing to manage?</p>
+<p>Adding a mechanic is relatively easy to justify when we focus exclusively on what it introduces.</p>
+<p>It becomes more difficult when we also consider what it costs.</p><h2>The Hidden Cost of Every New Mechanic</h2><p>A feature doesn't stop costing resources once it has been implemented.</p>
+<p>It becomes part of the game's architecture, production pipeline, and ongoing maintenance.</p>
+<p>A new gameplay system may require additional animations, UI elements, sound effects, balancing passes, documentation, testing, and technical support.</p>
+<p>It may also introduce dependencies that make future changes more complicated.</p>
+<p>Consider a combat mechanic that allows players to interrupt enemy attacks.</p>
+<p>Initially, it might seem like a relatively contained feature.</p>
+<p>But depending on the game's architecture and design, it could affect enemy behavior, animation transitions, hit reactions, attack timing, ability systems, combat readability, and difficulty balancing.</p>
+<p>Now imagine that this mechanic contributes very little to the intended combat experience.</p>
+<p>Even if its initial implementation is successful, the team has introduced a permanent source of complexity that must be considered whenever related systems change.</p>
+<p>And the more interconnected the game's systems become, the more expensive certain changes can be.</p>
+<p>This leads to something I find particularly interesting: what we might call design debt.</p>
+<p>Technical debt is a familiar concept in software development. It describes the future costs associated with technical decisions that make systems harder to maintain or evolve.</p>
+<p>Design debt is a useful parallel, although it is not necessarily a formally defined or universally measured concept.</p>
+<p>It can describe the accumulated consequences of design decisions that introduce unnecessary complexity, conflicting mechanics, or rules that require increasingly elaborate exceptions.</p>
+<p>A mechanic creates a problem.</p>
+<p>We introduce another mechanic to compensate.</p>
+<p>That solution produces an unexpected interaction.</p>
+<p>We add a special rule.</p>
+<p>Eventually, the game contains several interconnected systems whose primary purpose is to compensate for one another.</p>
+<p>At that point, the problem is no longer confined to a single feature.</p>
+<p>It has become part of the game's structure.</p>
+<p>Sometimes, the most effective optimization is not reducing the cost of a system, but eliminating the need for that system altogether.</p><h2>Are We Solving the Problem or Its Symptoms?</h2><p>This is perhaps the most important part of the discussion.</p>
+<p>Development teams are often organized around specific responsibilities.</p>
+<p>Designers define intended behavior. Programmers implement systems. Animators create movement and combat animations. QA identifies issues. Producers coordinate tasks and priorities.</p>
+<p>This specialization is necessary, particularly as projects grow.</p>
+<p>However, it can also create situations where everyone becomes focused on solving a particular implementation problem without questioning the decision that created it.</p>
+<p>Imagine a combat system that players consistently describe as slow.</p>
+<p>The team decides to increase animation playback speed.</p>
+<p>That creates problems with attack readability and hit detection.</p>
+<p>Additional adjustments are introduced.</p>
+<p>Now certain enemies become too difficult to react to, so their attack windows are modified.</p>
+<p>More balancing follows.</p>
+<p>After several iterations, the combat may feel somewhat better, but the team has modified multiple systems without necessarily identifying the original cause.</p>
+<p>Perhaps the problem wasn't animation speed.</p>
+<p>Perhaps players were spending too much time waiting between meaningful actions.</p>
+<p>Perhaps enemy behavior was too passive.</p>
+<p>Perhaps recovery times were excessive, or the game required too many intermediate actions before allowing players to execute their intentions.</p>
+<p>These are different design problems, and they demand different solutions.</p>
+<p>Increasing animation speed might still be appropriate, but only if it addresses the actual cause.</p>
+<p>This is why I believe teams should distinguish between three questions:</p>
+<p>1. Is the mechanic implemented incorrectly? The intended design is valuable, but its technical execution needs improvement.</p>
+<p>2. Is the mechanic interacting poorly with other systems? The feature may be useful, but its relationships, constraints, or dependencies need reconsideration.</p>
+<p>3. Is the mechanic itself the problem? The feature may not contribute enough value to justify its existence.</p>
+<p>The first question leads primarily toward implementation improvements.</p>
+<p>The second requires evaluating how systems interact.</p>
+<p>The third challenges the design decision itself.</p>
+<p>And that third question is often the most uncomfortable.</p><h2>But Not Every Discarded Mechanic Was a Design Mistake</h2><p>There is an important distinction I want to make here.</p>
+<p>I don't believe that every unnecessary or eventually discarded feature is evidence of poor game design.</p>
+<p>Game development is inherently iterative.</p>
+<p>Unlike many engineering problems, the success of a gameplay mechanic cannot always be determined through technical specifications or theoretical analysis.</p>
+<p>A mechanic can make perfect sense in a design document and feel terrible when played.</p>
+<p>Another can seem insignificant during early planning but become central to the experience once it interacts with other systems.</p>
+<p>Fun, responsiveness, tension, satisfaction, and player expression are difficult to evaluate without actual experimentation.</p>
+<p>This is why prototyping and playtesting are so important.</p>
+<p>A prototype isn't necessarily a commitment to a feature.</p>
+<p>It can be an experiment designed to answer a question.</p>
+<p>Does this movement ability create interesting traversal opportunities?</p>
+<p>Does this combat interaction encourage meaningful decisions?</p>
+<p>Does this resource limitation increase tension, or does it merely frustrate players?</p>
+<p>Does this feature reinforce the game's identity?</p>
+<p>Sometimes the answer will be no.</p>
+<p>And that's perfectly acceptable.</p>
+<p>A mechanic that was prototyped, tested, and discarded may have provided extremely valuable information.</p>
+<p>The problem isn't that the team invested time in something that ultimately didn't survive development.</p>
+<p>The problem appears when experimentation turns into commitment without sufficient evidence, or when the team continues investing simply because it has already invested so much.</p>
+<p>These are fundamentally different situations.</p>
+<p>One is part of a healthy creative process.</p>
+<p>The other can become an expensive organizational habit.</p><h2>The Sunk Cost Trap in Game Development</h2><p>There is a psychological dimension to this issue that I believe deserves attention.</p>
+<p>Imagine a team has spent three months developing a complicated gameplay system.</p>
+<p>Programmers have implemented the architecture. Designers have balanced its mechanics. Artists have created assets. Animators have produced dedicated animations.</p>
+<p>Playtesting eventually reveals that the system adds very little to the experience.</p>
+<p>Removing it would simplify the game and allow the team to focus on more valuable features.</p>
+<p>Yet the decision feels almost impossible.</p>
+<p>Why?</p>
+<p>Because the team has already invested three months.</p>
+<p>This is an example of the sunk cost fallacy: allowing past investments to influence decisions about future investments, even when those past costs cannot be recovered.</p>
+<p>The reasoning becomes:</p>
+<p>"We've already spent too much time on this to remove it."</p>
+<p>But the time has already been spent regardless of what happens next.</p>
+<p>The relevant question is whether maintaining and improving the feature will create enough future value to justify its future costs.</p>
+<p>This doesn't mean removal is always the correct decision.</p>
+<p>Sometimes a system is close to becoming valuable, and another iteration is justified.</p>
+<p>Sometimes removing it would disrupt other essential mechanics or create additional production risks.</p>
+<p>The point is that those decisions should be based on expected value, evidence, and future consequences, not simply on how much work has already been completed.</p>
+<p>A team needs to be able to recognize when continuing is more expensive than changing direction.</p><h2>Looking Back at Dark Life: Excalibur</h2><p>This reflection also connects with my own experience working on Dark Life: Excalibur.</p>
+<p>Looking back, I can recognize several situations that illustrate different aspects of this problem. Some mechanics required repeated adjustments to achieve the intended behavior. Other features became increasingly complex as they interacted with existing systems. And in certain cases, it was worth questioning whether the contribution of a mechanic justified the effort required to implement and maintain it.</p>
+<p>What makes these situations particularly interesting is that the problems were not always obvious when the original decisions were made.</p>
+<p>Some ideas seemed reasonable on paper. Others were promising during early development but became more difficult to justify as the project evolved. And sometimes, the effort already invested in a system made reconsidering its place in the game more difficult.</p>
+<p>I don't think it would be fair to describe all of these situations simply as bad design.</p>
+<p>Game development involves uncertainty, experimentation, technical constraints, changing priorities, and decisions made with incomplete information. A feature that appears valuable at one stage of production may become less relevant later.</p>
+<p>But experiencing these situations firsthand has made me more conscious of an important distinction: a decision doesn't have to be wrong when it is made to become the wrong decision to keep pursuing.</p>
+<p>That is something I find particularly valuable in retrospect.</p>
+<p>As developers, we naturally want to solve the problems in front of us. When a system doesn't behave correctly, our instinct is to fix it. When an interaction becomes complicated, we look for ways to make it work. And when a mechanic has already consumed considerable effort, abandoning it can feel like admitting that the work was wasted.</p>
+<p>Yet sometimes the most valuable contribution we can make is not another technical solution, but a well-founded question about the system itself.</p>
+<p>Does this mechanic still serve the experience we're trying to create?</p>
+<p>Are we improving the game, or are we simply making an existing decision more expensive to maintain?</p>
+<p>Could removing or simplifying the feature allow us to invest that effort somewhere more meaningful?</p>
+<p>I don't pretend that these questions are easy to answer, particularly in the middle of production. Hindsight provides clarity that development teams rarely have in the moment.</p>
+<p>But my experience on Dark Life: Excalibur helped me appreciate that good development judgment isn't only about finding solutions. It's also about recognizing when the problem we're solving deserves to be reconsidered.</p><h2>This Isn't Just a Game Designer's Responsibility</h2><p>It would be easy to interpret this entire discussion as a criticism of game designers.</p>
+<p>After all, many unnecessary systems begin as design decisions.</p>
+<p>But I think that interpretation would be incomplete.</p>
+<p>Game development is a collaborative process shaped by creative direction, technical constraints, production schedules, business requirements, player feedback, and changing priorities.</p>
+<p>A feature that made sense six months ago may become irrelevant after the game's direction changes.</p>
+<p>A mechanic requested by a publisher may introduce conflicts with the original design.</p>
+<p>A technical limitation may force the team to reconsider a system.</p>
+<p>A seemingly minor feature may become unexpectedly expensive because of interactions that were difficult to anticipate.</p>
+<p>Not every problematic mechanic originates from a poorly considered design document.</p>
+<p>And not every programmer should be expected to challenge every design decision.</p>
+<p>However, I do believe that healthy development teams should encourage constructive questions across disciplines.</p>
+<p>A gameplay programmer may recognize that a requested feature introduces unnecessary architectural complexity.</p>
+<p>An animator may notice that a movement mechanic creates readability problems.</p>
+<p>A QA tester may identify a recurring frustration that points toward a deeper design issue.</p>
+<p>A producer may recognize that the cost of maintaining a system exceeds its contribution to the project.</p>
+<p>These perspectives matter.</p>
+<p>The goal isn't to undermine creative direction or encourage everyone to redesign the game independently.</p>
+<p>It's to create an environment where questioning a requirement is considered part of improving the product, rather than an obstacle to getting work done.</p>
+<p>A good team shouldn't only ask whether a feature can be implemented. It should also be willing to discuss whether implementing it is the right decision.</p><h2>A More Intentional Approach to Game Development</h2><p>I don't think there is a universal formula for determining which mechanics deserve to exist.</p>
+<p>Game design is too contextual for that.</p>
+<p>However, I believe there are several questions worth asking before committing significant production resources to a feature.</p>
+<p>What experience are we trying to create?</p>
+<p>A mechanic should serve a recognizable purpose within the game's intended experience. That purpose doesn't always need to be expressed through a measurable performance metric, but the team should understand why the feature matters.</p>
+<p>What meaningful decisions or possibilities does it introduce?</p>
+<p>Not every mechanic needs to create strategic depth. Some exist to improve expression, pacing, accessibility, immersion, or emotional impact.</p>
+<p>But it should contribute something identifiable.</p>
+<p>Could we achieve the same result with a simpler solution?</p>
+<p>Sometimes an existing mechanic can be extended or adjusted instead of introducing an entirely new system.</p>
+<p>What would the game lose if we removed it?</p>
+<p>This is one of my favorite questions because it forces us to evaluate a feature by its contribution rather than its implementation.</p>
+<p>If removing a mechanic has little effect on the intended experience, that should at least encourage further investigation.</p>
+<p>Are we addressing the cause of a problem or compensating for its consequences?</p>
+<p>Repeatedly adding exceptions and supporting systems may indicate that the original design decision needs to be revisited.</p>
+<p>These questions won't eliminate uncertainty.</p>
+<p>They won't prevent failed prototypes or guarantee good design.</p>
+<p>But they can help teams identify when a problem requires more than another implementation task.</p><h2>The Courage to Remove</h2><p>There is something psychologically satisfying about adding features.</p>
+<p>New mechanics create visible progress.</p>
+<p>They can be demonstrated in meetings, included in development updates, and tracked as completed tasks.</p>
+<p>Removing a feature can feel like moving backward.</p>
+<p>Yet some of the most valuable improvements in a game may come from simplification.</p>
+<p>Removing a redundant mechanic can improve readability.</p>
+<p>Eliminating an unnecessary resource can reduce cognitive load.</p>
+<p>Simplifying an interaction can make controls more responsive.</p>
+<p>Reducing the number of overlapping systems can make the game's core experience more coherent.</p>
+<p>And removing a feature can free resources for the mechanics that truly define the game.</p>
+<p>Of course, simplification is not inherently better.</p>
+<p>Some games depend on complexity, friction, and demanding systems to create their intended experiences.</p>
+<p>The objective should never be to eliminate complexity indiscriminately.</p>
+<p>It should be to ensure that complexity is justified by the experience it creates.</p>
+<p>That distinction matters.</p>
+<p>A difficult mechanic can be valuable.</p>
+<p>A complicated system can be essential.</p>
+<p>A feature that initially frustrates players can still be an intentional part of a compelling design.</p>
+<p>The question is not whether something is simple or complex.</p>
+<p>The question is whether its contribution justifies its cost.</p><h2>Final Thoughts</h2><p>Returning to the engineering principle that inspired this reflection, I think its greatest value for game development is not simply the suggestion that we should remove unnecessary things before optimizing them.</p>
+<p>It's the reminder that we should question our assumptions before becoming invested in solving the problems they create.</p>
+<p>As developers, we spend a great deal of time thinking about how to build systems.</p>
+<p>How to make them faster.</p>
+<p>How to make them more reliable.</p>
+<p>How to make them scalable, maintainable, responsive, and technically elegant.</p>
+<p>Those are important responsibilities.</p>
+<p>But technical excellence alone doesn't guarantee a better game.</p>
+<p>We can create a beautifully engineered system that contributes very little to the player's experience.</p>
+<p>We can spend weeks polishing a mechanic that introduces more frustration than meaningful interaction.</p>
+<p>And we can become so focused on solving implementation problems that we forget to question the decisions behind them.</p>
+<p>This doesn't mean we should stop experimenting, avoid ambitious ideas, or expect every design decision to be correct from the beginning.</p>
+<p>Quite the opposite.</p>
+<p>Experimentation is essential.</p>
+<p>Iteration is essential.</p>
+<p>Failure is often informative.</p>
+<p>But so is the willingness to recognize when an idea has served its purpose, when a system is no longer justified, or when removing something would improve the game more than another round of optimization.</p>
+<p>Ultimately, I believe good game development requires more than the ability to build and improve systems.</p>
+<p>It also requires the judgment to recognize which systems deserve to exist.</p>
+<p>And perhaps, before asking how we can make a mechanic better, we should occasionally ask a much more fundamental question:</p>
+<p>Would our game actually be worse without it?</p>
+<hr>
+<p>I'd be interested to hear how other developers approach this. Have you ever worked on a mechanic or system that required significant development effort, only to realize that removing it was the better design decision?</p></article><aside class="aside"><b>Technical Notes</b><a href="./">All articles</a><a href="../#work">Selected work</a><a href="../#resume">Résumé</a><a href="../#contact">Contact</a></aside></div></main><footer><div class="wrap footer-inner"><span>© 2026 Rayner Bestard</span><a href="./">More articles ↑</a></div></footer></body></html>
