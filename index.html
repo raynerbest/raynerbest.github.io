@@ -77,7 +77,7 @@
     .project-link:hover,.project-link:focus{background:var(--blue-soft);border-color:var(--blue)}
     .implementation-samples{margin-top:24px;padding-top:22px;border-top:1px solid var(--line)}
     .implementation-head{display:flex;justify-content:space-between;gap:18px;align-items:end;margin-bottom:14px}.implementation-head h4{margin:0;font-size:14px;letter-spacing:-.01em}.implementation-head span{color:var(--muted);font-size:11px}
-    .implementation-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr));gap:12px}.implementation-card{margin:0}.implementation-card video{width:100%;aspect-ratio:16/9;display:block;object-fit:cover;background:#05070a;border:1px solid var(--line);border-radius:10px}.implementation-card figcaption{margin-top:7px;color:#9ba8ba;font:600 10px/1.4 ui-monospace,monospace;text-transform:uppercase;letter-spacing:.05em}.implementation-card:last-child:nth-child(odd){grid-column:auto;max-width:none}
+    .implementation-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.implementation-card{margin:0;min-width:0}.implementation-card video{width:100%;aspect-ratio:16/9;display:block;object-fit:cover;background:#05070a;border:1px solid var(--line);border-radius:10px}.implementation-card figcaption{margin-top:7px;color:#9ba8ba;font:600 10px/1.4 ui-monospace,monospace;text-transform:uppercase;letter-spacing:.05em}.implementation-card:last-child:nth-child(odd){grid-column:auto;max-width:none}
     @media(max-width:620px){.implementation-grid{grid-template-columns:1fr}.implementation-card:last-child:nth-child(odd){grid-column:auto;max-width:none}.implementation-head{align-items:start;flex-direction:column;gap:4px}}
     .tags{display:flex;flex-wrap:wrap;gap:8px}
     .tag{border:1px solid var(--line);border-radius:999px;padding:5px 10px;color:#bdc7d5;font-size:11px;font-weight:650}
@@ -130,7 +130,8 @@
     .lang-switch{display:flex;gap:3px;padding:3px;border:1px solid var(--line);border-radius:8px;font-size:12px;font-weight:750;white-space:nowrap}.lang-switch a{padding:5px 8px;border-radius:5px;color:var(--muted)}.lang-switch a[aria-current="page"]{background:var(--blue-soft);color:var(--blue)}.lang-switch a:hover{color:var(--text)}
   
     .trailer-cover{position:relative;display:block;width:100%;aspect-ratio:16/9;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#090b10;cursor:pointer;padding:0;color:white}.trailer-cover img{width:100%;height:100%;object-fit:cover;display:block}.trailer-cover:after{content:"▶";position:absolute;inset:0;display:grid;place-items:center;font-size:32px;text-shadow:0 2px 12px #000;background:rgba(0,0,0,.18)}.trailer-cover:hover:after{background:rgba(0,0,0,.35)}.trailer-frame{width:100%;aspect-ratio:16/9;border:0;border-radius:12px;display:block}.project-visual{min-width:0}
-  </style>
+  @media(min-width:621px) and (max-width:1050px){.implementation-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+</style>
 <link rel="canonical" href="https://raynerbest.github.io/"><link rel="alternate" hreflang="en" href="https://raynerbest.github.io/"><link rel="alternate" hreflang="es" href="https://raynerbest.github.io/es/"><link rel="alternate" hreflang="x-default" href="https://raynerbest.github.io/"></head>
 <body>
   <header class="nav">
