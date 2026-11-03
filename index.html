@@ -132,6 +132,70 @@
     .trailer-cover{position:relative;display:block;width:100%;aspect-ratio:16/9;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#090b10;cursor:pointer;padding:0;color:white}.trailer-cover img{width:100%;height:100%;object-fit:cover;display:block}.trailer-cover:after{content:"▶";position:absolute;inset:0;display:grid;place-items:center;font-size:32px;text-shadow:0 2px 12px #000;background:rgba(0,0,0,.18)}.trailer-cover:hover:after{background:rgba(0,0,0,.35)}.trailer-frame{width:100%;aspect-ratio:16/9;border:0;border-radius:12px;display:block}.project-visual{min-width:0}
   @media(min-width:621px) and (max-width:1050px){.implementation-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:620px){.project>.implementation-samples{grid-column:1}}
+
+/* Portfolio visual refresh — editorial gameplay showcase, November 2026 */
+:root{--bg:#08090d;--surface:#11131b;--surface-2:#1b1e29;--text:#f7f7fb;--muted:#a9adbc;--line:rgba(255,255,255,.13);--blue:#b7a0ff;--cyan:#c5ff80;--blue-soft:rgba(183,160,255,.14);--max:1320px}
+body{font-family:Inter,"Segoe UI",system-ui,sans-serif;line-height:1.58;background:#08090d}
+body:before{background:radial-gradient(ellipse at 86% 6%,rgba(143,108,255,.19),transparent 37rem),radial-gradient(ellipse at 12% 34%,rgba(124,220,202,.055),transparent 32rem)}
+::selection{background:#b7a0ff;color:#09090f}
+.nav{background:rgba(8,9,13,.87);border-bottom-color:rgba(255,255,255,.1)}
+.nav-inner{height:78px}
+.brand{font-size:15px;letter-spacing:-.035em}.mark{border-radius:50%;width:38px;height:38px;background:#b7a0ff;color:#0c0a17;border:0}
+.links{gap:23px;font-size:12px;text-transform:uppercase;letter-spacing:.07em}
+.links a:hover,.links a:focus{color:#c5ff80}
+.availability{color:#d7ffc0}.dot{background:#c5ff80;box-shadow:0 0 0 5px rgba(197,255,128,.09)}
+.hero{min-height:90vh;padding:148px 0 95px;position:relative}
+.hero-grid{grid-template-columns:minmax(0,1.22fr) minmax(320px,.78fr);gap:clamp(30px,5vw,90px)}
+.eyebrow{color:#c5ff80;letter-spacing:.18em}.eyebrow:before{background:#c5ff80}
+h1{font-size:clamp(4.2rem,9.4vw,9.3rem);line-height:.85;letter-spacing:-.085em;margin:28px 0 36px;font-weight:850}
+h1 span{-webkit-text-stroke:1px rgba(255,255,255,.56)}
+.lead{font-size:clamp(1.1rem,1.75vw,1.43rem);line-height:1.58;color:#c0c1cc;max-width:640px}
+.btn{border-radius:3px;padding:15px 21px;text-transform:uppercase;font-size:11px;letter-spacing:.09em;font-weight:800}
+.btn.primary{background:#c5ff80;color:#10150a;border-color:#c5ff80}.btn:hover{border-color:#b7a0ff}
+.portrait-shell{border-radius:4px;background:#242334;box-shadow:24px 24px 0 rgba(183,160,255,.09),0 32px 80px rgba(0,0,0,.4)}
+.portrait{border-radius:3px;aspect-ratio:4/5;background:#17151f}
+.portrait img{filter:saturate(.75) contrast(1.07)}
+.floating-label{border-radius:2px;left:-34px;bottom:24px;background:#b7a0ff;color:#101019;border:0;padding:17px 20px}
+.floating-label small{color:#29213e}
+.stats{background:#0d0f15}.stat{padding:34px 25px}.stat b{font-size:31px;font-weight:850}.stat span{letter-spacing:.12em}
+.section{padding:125px 0}.section-head{grid-template-columns:1fr 1fr;gap:45px;margin-bottom:48px}
+.kicker{color:#c5ff80;letter-spacing:.16em}
+h2{font-size:clamp(3rem,6.5vw,6rem);letter-spacing:-.075em;line-height:.94}
+.section-intro{font-size:17px;line-height:1.75}
+.project-list{border:0;display:grid;gap:28px}
+.project{position:relative;display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);gap:0;padding:0;background:#12141c;border:1px solid rgba(255,255,255,.1);overflow:hidden;transition:transform .25s,border-color .25s}
+.project:hover{background:#171924;transform:translateY(-4px);border-color:rgba(183,160,255,.5)}
+.project>.num{position:absolute;top:19px;left:21px;z-index:3;color:#fff;background:rgba(10,10,16,.75);padding:8px 11px;font-size:11px;letter-spacing:.12em}
+.project>.project-visual{grid-column:1;grid-row:1;align-self:stretch;min-width:0;margin:0}
+.project>.project-visual img{border:0;border-radius:0;box-shadow:none;aspect-ratio:16/10;height:100%;min-height:350px;object-fit:cover;transition:transform .5s}
+.project:hover>.project-visual img{transform:scale(1.035)}
+.project>.project-visual .trailer-cover{border:0;border-radius:0;height:100%;min-height:350px;aspect-ratio:auto}
+.project>.project-visual .trailer-cover img{height:100%;min-height:350px}
+.project>.project-visual .trailer-cover:after{font-size:44px;background:linear-gradient(90deg,transparent,rgba(0,0,0,.16))}
+.project>.project-visual .project-credit{position:absolute;bottom:12px;left:17px;background:rgba(0,0,0,.72);padding:5px 8px;color:#fff;z-index:2}
+.project>div:not(.num):not(.implementation-samples){grid-column:2;grid-row:1;padding:clamp(28px,4vw,58px);display:flex;flex-direction:column;align-items:flex-start;justify-content:center;min-width:0}
+.project h3{font-size:clamp(2rem,3.5vw,3.5rem);letter-spacing:-.065em;line-height:1.02;margin:0 0 18px}
+.meta{color:#c5ff80;font-size:10px;letter-spacing:.13em}
+.project-copy{font-size:14px;line-height:1.75;margin:18px 0 20px;color:#b6b9c8}
+.tag{border-radius:2px;color:#c4c7d3;font-size:10px;text-transform:uppercase;letter-spacing:.05em}
+.project-links{margin-top:25px}
+.project-link{border-radius:2px;color:#d0bdff;border-color:rgba(183,160,255,.36);font-size:11px}
+.project-link:hover{background:rgba(183,160,255,.12);border-color:#b7a0ff}
+.project>.implementation-samples{grid-column:1/-1;grid-row:2;margin:0;padding:26px clamp(20px,3vw,42px) 32px;background:#0e1017;border-top:1px solid var(--line)}
+.implementation-head h4{font-size:17px}.implementation-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:17px}
+.implementation-card video{border-radius:2px}.implementation-card figcaption{font-size:11px}
+.role:before{border-color:#b7a0ff}.role .company{color:#c5ff80}
+.studio-grid,.resume-card,.contact-box{border-radius:3px;background:linear-gradient(125deg,#1b1a29,#10131b 75%);border-color:rgba(183,160,255,.22)}
+.skill-card,.note-card{border-radius:3px;background:#13151d}
+.skill-card .icon,.note-card .read{color:#c5ff80}
+.note-card:hover{border-color:#b7a0ff}
+.contact-box:after{border-color:rgba(183,160,255,.18)}
+.lang-switch{border-radius:3px}.lang-switch a{border-radius:2px}
+@media(max-width:1000px){.hero-grid{gap:35px}.project h3{font-size:clamp(1.8rem,3vw,2.8rem)}.project>div:not(.num):not(.implementation-samples){padding:27px}.project>.project-visual .trailer-cover,.project>.project-visual .trailer-cover img,.project>.project-visual img{min-height:300px}}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr}.portrait-card{max-width:450px}.section-head{grid-template-columns:1fr}.project{grid-template-columns:1fr}.project>.project-visual{grid-column:1;grid-row:1}.project>div:not(.num):not(.implementation-samples){grid-column:1;grid-row:2;padding:30px}.project>.implementation-samples{grid-row:3}.project>.project-visual .trailer-cover,.project>.project-visual .trailer-cover img,.project>.project-visual img{min-height:0;aspect-ratio:16/9}.implementation-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:620px){.nav-inner{height:auto}.hero{padding-top:165px;padding-bottom:70px}.hero-grid{gap:50px}h1{font-size:clamp(3.7rem,14vw,5.7rem)}.section{padding:84px 0}h2{font-size:clamp(2.7rem,12vw,4.2rem)}.project{gap:0}.project>.num{top:12px;left:12px}.project>div:not(.num):not(.implementation-samples){padding:26px 20px}.project h3{font-size:2.15rem}.project>.implementation-samples{grid-column:1;padding:22px 18px}.implementation-grid{grid-template-columns:1fr}.portrait-card{max-width:100%}.floating-label{left:12px;bottom:12px}.stats .stat{padding:22px 12px}.stats .stat b{font-size:24px}}
+@media(prefers-reduced-motion:reduce){.project,.project>.project-visual img{transition:none}.project:hover{transform:none}.project:hover>.project-visual img{transform:none}}
+
 </style>
 <link rel="canonical" href="https://raynerbest.github.io/"><link rel="alternate" hreflang="en" href="https://raynerbest.github.io/"><link rel="alternate" hreflang="es" href="https://raynerbest.github.io/es/"><link rel="alternate" hreflang="x-default" href="https://raynerbest.github.io/"></head>
 <body>
